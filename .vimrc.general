@@ -1,0 +1,117 @@
+" ----------------------------------------------------------------------------
+" GENERAL
+" ----------------------------------------------------------------------------
+syntax on
+filetype plugin indent on " load filetype-specific indent files
+set nocompatible          " Don't use the default vi-like setting
+set encoding=utf-8 nobomb " Use UTF-8 without BOM
+set clipboard=unnamed     " Use the OS clipboard by default (on versions compiled with `+clipboard`)
+set shortmess=a           " Short the status message
+set report=0              " Show all changes
+set exrc                  " Read local .vimrc
+
+" Jump to the last cursor position
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.md set complete+=kspell
+
+" Custom files
+autocmd BufRead,BufNewFile *.jst.eco set filetype=html
+autocmd BufRead,BufNewFile *.html.inky-haml set filetype=haml
+
+" ----------------
+" UI
+" ----------------
+set list          " Show trailing whitespace
+set number        " Enable line numbers
+set showcmd       " Show the (partial) command as it’s being typed
+set noshowmode      " Show the current mode
+" set cursorline    " Highlight current line
+set colorcolumn=100
+set wildmode=longest,list,full
+set wildmenu      " visual autocomplete for command menu
+set showmatch     " highlight matching [{()}] "
+set title         " Show the filename in the window titlebar
+set ruler         " Show the cursor position
+set nostartofline " Don’t reset cursor to start of line when moving around.
+set shortmess=atI " Don’t show the intro message when starting Vim
+set lcs=tab:▸\ ,trail:·,nbsp:_ " Show “invisible” characters
+set noerrorbells " Disable error bells
+let &t_SI = "\<Esc>]50;CursorShape=1\x7" " change cursor view for insert/normal mode
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" set ttyfast
+" set lazyredraw
+
+set background=dark
+set termguicolors
+colorscheme base16-default-dark
+
+" ------------------
+"  Search
+"  -----------------
+set hlsearch   " Highlight searches
+set incsearch  " Highlight dynamically as pattern is typed
+set gdefault   " Add the g flag to search/replace by default
+set ignorecase " Ignore case of searches
+
+" ------------------
+"  Folding
+"  -----------------
+set foldenable        " dont fold by default
+set foldmethod=indent " fold based on indent
+set foldlevelstart=10 " open most folds by default
+set foldnestmax=10    " 10 nested fold max
+
+" ------------------
+"  Navigation
+"  -----------------
+" set noesckeys                  " No cursor keys in insert mode
+set backspace=indent,eol,start " Allow backspace in insert mode
+
+" ------------------
+"  Indentation
+"  -----------------
+set tabstop=2     " read as
+set softtabstop=2 " insert as
+set expandtab     " tabs are spaces
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=2
+
+" ------------------
+" Splits
+" ------------------
+set splitbelow
+set splitright
+set fillchars=vert:│  " Vertical sep between windows (unicode)"
+
+" -----------------
+"  Ignore
+" -----------------
+set wildignore+=.DS_Store
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.gif,*.psd,*.o,*.obj,*.min.js
+set wildignore+=*/bower_components/*,*/node_modules/*
+set wildignore+=*/vendor/*,*/.git/*,*/.hg/*,*/.svn/*,*/.sass-cache/*,*/log/*,*/tmp/*,*/build/*,*/doc/*,*/source_maps/*,*/dist/*
+set wildignore+=*.so,*.swp,*.zip,*/test/files/*,*/webpack.bundle.js
+
+" ----------------------------------------------------------------------------
+" Formatters
+" ----------------------------------------------------------------------------
+autocmd FileType javascript setlocal formatprg=prettier
+autocmd FileType html setlocal formatprg=js-beautify\ --type\ html
+autocmd FileType scss setlocal formatprg=prettier\ --parser\ css
+autocmd FileType css setlocal formatprg=prettier\ --parser\ css
+
+" ----------------------------------------------------------------------------
+"  Enable omni completion.
+" ----------------------------------------------------------------------------
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType scss setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+
+set tags=.vim_tags;

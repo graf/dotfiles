@@ -1,0 +1,24 @@
+" ----------------------------------------------------------------------------
+" KEY MAPPINGS
+" ----------------------------------------------------------------------------
+
+let mapleader = ","
+
+inoremap jj <Esc>
+nnoremap <leader>= gg=G``
+nnoremap <leader>g gggqG``
+nnoremap <Space> za
+nnoremap <CR> :noh<cr>
+nnoremap <C-J> gt
+nnoremap <C-K> gT
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>x :qa<CR>
+nnoremap <Leader>o :tabo<CR>
+map <Left> :echo "no!"<cr>
+map <Right> :echo "no!"<cr>
+map <Up> :echo "no!"<cr>
+map <Down> :echo "no!"<cr>
+nmap <Leader>hr <Plug>GitGutterUndoHunk

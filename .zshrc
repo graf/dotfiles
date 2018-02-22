@@ -2,6 +2,19 @@ source $HOME/.secrets
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export EDITOR="vim"
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export GOPATH=$HOME/.go
+
+export PATH="$PATH:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$HOME/.fastlane/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$HOME/.yarn/bin:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -20,7 +33,7 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
 alias cls=clear
-alias hb=hub browse
+alias hb='hub browse'
 alias gs=git status
 alias gr=git pull --rebase
 alias rc=rails c
@@ -30,7 +43,7 @@ alias zt=zeus test
 alias z=zeus
 alias s=spring
 alias ha='cd ~/rubydev/nearby'
-alias hd='cd ~/rubydev/nearby/gems/ha-dashboard'
+alias em='cd ~/jsdev/emarketer-content-builder'
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -71,14 +84,9 @@ bindkey -e
 bindkey '^]' forward-word
 bindkey '^[' backward-word
 
-
 # Customize to your needs...
 eval "$(rbenv init -)"
 eval `docker-machine env 2>/dev/null`
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -95,4 +103,3 @@ unalias g
 # added by travis gem
 [ -f /Users/graf/.travis/travis.sh ] && source /Users/graf/.travis/travis.sh
 
-export PATH="$HOME/.yarn/bin:$PATH"

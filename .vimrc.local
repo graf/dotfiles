@@ -1,3 +1,0 @@
-map <D-1> :NERDTreeToggle<CR>
-nmap <C-1> :NERDTreeToggle<CR>
-nmap <leader>1 :NERDTreeToggle<CR>

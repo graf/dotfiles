@@ -1,0 +1,92 @@
+" ----------------------------------------------------------------------------
+" Plugins
+" ----------------------------------------------------------------------------
+call plug#begin('~/.vim/plugged')
+
+" Extension
+Plug 'scrooloose/nerdtree'          " File explorer
+Plug 'junegunn/fzf.vim'             " Best fuzzy finder
+Plug 'w0rp/ale'                     " Async linter
+Plug 'Shougo/neocomplete.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-endwise'            " auto add closing end's
+Plug 'jiangmiao/auto-pairs'         " Auto-insert paired symbols
+Plug 'roman/golden-ratio'           " Auto-expands current split
+Plug 'thinca/vim-localrc'
+
+" Appearance
+Plug 'chriskempson/base16-vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'itchyny/lightline.vim'
+
+" Git
+Plug 'tpope/vim-fugitive'           " Git utils
+Plug 'airblade/vim-gitgutter'       " Shows a git diff in the gutter
+
+" Highlights
+Plug 'tmhedberg/matchit'            " extended %
+Plug 'Valloric/MatchTagAlways'      " highlights the enclosing html/xml tags
+
+" Commands
+Plug 'tpope/vim-surround'           " Adds surrounds actions
+Plug 'tpope/vim-commentary'         " Commenting
+
+" Html markup langs
+Plug 'othree/html5.vim'
+Plug 'tpope/vim-haml', { 'for': 'haml' }
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'digitaltoad/vim-pug'
+
+" Stylesheets
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'ap/vim-css-color'
+
+" Ruby
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+
+" JavaScript
+Plug 'othree/yajs.vim'
+Plug 'mxw/vim-jsx'
+Plug 'posva/vim-vue'
+Plug 'leafgarland/typescript-vim'
+
+" Markdown
+Plug 'plasticboy/vim-markdown'
+
+
+" Go
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'Raimondi/delimitMate'
+Plug 'SirVer/ultisnips'
+Plug 'cespare/vim-toml'
+Plug 'corylanou/vim-present', {'for' : 'present'}
+Plug 'ekalinin/Dockerfile.vim', {'for' : 'Dockerfile'}
+Plug 'elzr/vim-json', {'for' : 'json'}
+Plug 'fatih/vim-go'
+Plug 'fatih/vim-hclfmt'
+Plug 'fatih/vim-nginx' , {'for' : 'nginx'}
+Plug 'godlygeek/tabular'
+Plug 'hashivim/vim-hashicorp-tools'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'mileszs/ack.vim'
+Plug 't9md/vim-choosewin'
+Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
+Plug 'tomasr/molokai'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-scriptease'
+
+" Misc/tmp
+Plug 'StanAngeloff/php.vim'
+Plug 'vim-perl/vim-perl'
+Plug 'elixir-editors/vim-elixir'
+
+
+call plug#end()
+
+set rtp+=~/.fzf
+
