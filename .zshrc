@@ -1,3 +1,4 @@
+ZSH_DISABLE_COMPFIX="true"
 source $HOME/.secrets
 
 export LC_ALL=en_US.UTF-8
