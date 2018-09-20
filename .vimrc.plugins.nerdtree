@@ -3,6 +3,7 @@
 " ----------------------------------------------------------------------------
 let NERDTreeShowHidden=1 " Always show dot files
 let NERDTreeQuitOnOpen=1
+let NERDTreeWinSize=40
 
 map <Leader>n :NERDTreeFind<CR>
 map <D-1> :NERDTreeToggle<CR>

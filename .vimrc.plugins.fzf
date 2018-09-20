@@ -19,9 +19,9 @@ let g:rg_command = '
 
 nmap <leader>o :FZF<CR>
 nnoremap <Leader><Leader> : FzfFiles<cr>
-nnoremap <Leader>f :Ag <C-R><C-W><cr>
-vnoremap <Leader>f y:Ag <C-R>"<cr>
-nnoremap <C-F> :Ag<Space>
+nnoremap <Leader>f :FzfAg <C-R><C-W><cr>
+vnoremap <Leader>f y:FzfAg <C-R>"<cr>
+nnoremap <C-F> :FzfAg<Space>
 noremap <Leader>] :Fzfc<cr>
 nmap <C-p> :FzfHistory<cr>
 imap <C-p> <esc>:<C-u>FzfHistory<cr>

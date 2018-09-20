@@ -111,6 +111,7 @@
 [core]
   autocrlf = false
   editor = vim
+	excludesfile = /Users/graf/.gitignore
 [advice]
   statusHints = false
 [diff]
@@ -119,5 +120,10 @@
   mnemonicprefix = true
   algorithm = patience
 [user]
-  email = graf@abolmasov.pro
-  name = Pavel Abolmasov
+	email = graf@abolmasov.pro
+	name = Pavel Abolmasov
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
