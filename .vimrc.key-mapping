@@ -2,12 +2,13 @@
 " KEY MAPPINGS
 " ----------------------------------------------------------------------------
 
-let mapleader = ","
+let mapleader = " "
+
+nnoremap gd <C-]> " go to definition
 
 inoremap jj <Esc>
 nnoremap <leader>= gg=G``
 nnoremap <leader>g gggqG``
-nnoremap <Space> za
 nnoremap <CR> :noh<cr>
 nnoremap <C-J> gt
 nnoremap <C-K> gT

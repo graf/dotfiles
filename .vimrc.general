@@ -9,6 +9,7 @@ set clipboard=unnamed     " Use the OS clipboard by default (on versions compile
 set shortmess=a           " Short the status message
 set report=0              " Show all changes
 set exrc                  " Read local .vimrc
+set vb                    " disable alert sound
 
 " Jump to the last cursor position
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal g`\"" | endif
@@ -45,7 +46,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 set background=dark
 set termguicolors
-colorscheme base16-default-dark
+" colorscheme base16-default-dark
 
 " ------------------
 "  Search
@@ -114,4 +115,4 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
-set tags=.vim_tags;
+set tags+=./tags;
