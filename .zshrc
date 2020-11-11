@@ -33,36 +33,12 @@ ZSH_THEME="gallois"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
-alias cls=clear
 alias hb='hub browse'
 alias gs=git status
 alias gr=git pull --rebase
 alias ha='cd ~/rubydev/nearby'
 alias em='cd ~/jsdev/emarketer-content-builder'
 alias jf='cd ~/rubydev/jiffyshirts'
-
-# rails docker
-DOCKER_RAILS_COMMAND="docker-compose run --rm rails"
-alias d="docker-compose"
-alias dr="$DOCKER_RAILS_COMMAND"
-alias dbe="$DOCKER_RAILS_COMMAND bundle exec"
-alias dbi="$DOCKER_RAILS_COMMAND bundle"
-alias dbu="$DOCKER_RAILS_COMMAND bundle update"
-alias drc="$DOCKER_RAILS_COMMAND bundle exec rails c"
-alias dar="docker attach $(docker ps | grep 'bundle exec rails s' | tr -s " " | cut -d " " -f 1)"
-
-function deploy {
-  echo "Start deploy on $1"
-  d run \
-    -e AWS_ACCESS_KEY_ID=XXX \
-    -e AWS_SECRET_ACCESS_KEY=XXX \
-    -e AWS_REGION=us-east-1 \
-    -e DEPLOY_BUCKET=jiffyshirts-ops \
-    -e PACKAGE_FOLDER=jiffyshirts_deploy \
-    -e RAILS_ENV=deploy \
-    rails bash -l -c "bundle exec rails oops:build oops:upload \"oops:deploy[jiffyshirts,$1]\""
-  echo "Finish deploy on $1"
-}
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -93,7 +69,7 @@ function deploy {
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby compleat gem brew osx npm node rbenv zeus history zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git ruby compleat gem brew osx npm node history zsh-syntax-highlighting zsh-autosuggestions)
 
 
 alias dokku='bash $HOME/.dokku/contrib/dokku_client.sh'
@@ -105,8 +81,8 @@ bindkey '^]' forward-word
 bindkey '^[' backward-word
 
 # Customize to your needs...
-eval "$(rbenv init -)"
-eval `docker-machine env 2>/dev/null`
+# eval "$(rbenv init -)"
+# eval `docker-machine env 2>/dev/null`
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -115,11 +91,12 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/graf/.sdkman"
-[[ -s "/Users/graf/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/graf/.sdkman/bin/sdkman-init.sh"
+# export SDKMAN_DIR="/Users/graf/.sdkman"
+# [[ -s "/Users/graf/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/graf/.sdkman/bin/sdkman-init.sh"
 
 unalias g
 
 # added by travis gem
-[ -f /Users/graf/.travis/travis.sh ] && source /Users/graf/.travis/travis.sh
+# [ -f /Users/graf/.travis/travis.sh ] && source /Users/graf/.travis/travis.sh
 
+source /usr/local/opt/asdf/asdf.sh
